@@ -1,17 +1,38 @@
 import './App.css';
-import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 function App() {
   return (
     <div className="App">
-      <Button variant="primary">Primary</Button>{' '}
-      <Button variant="secondary">Secondary</Button>{' '}
-      <Button variant="success">Success</Button>{' '}
-      <Button variant="warning">Warning</Button>{' '}
-      <Button variant="danger">Danger</Button>{' '}
-      <Button variant="info">Info</Button>{' '}
-      <Button variant="light">Light</Button>{' '}
-      <Button variant="dark">Dark</Button> <Button variant="link">Link</Button>
+
+      {/*네비게이션 바 */}
+      <Navbar bg="light" variant="light">
+        <Container>
+          <Navbar.Brand href="#home">Travel</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+
+      {/* 메인 사진 */}
+      <div className='bg_img'/>
+
+      {/* 목록 */}
+      <Container>
+      <Row>
+        <Col xs>First, but unordered</Col>
+        <Col xs={{ order: 12 }}>Second, but last</Col>
+        <Col xs={{ order: 1 }}>Third, but second</Col>
+      </Row>
+    </Container>
     </div>
   );
 }
