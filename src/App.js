@@ -1,12 +1,17 @@
 import './App.css';
+import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import data from './data'
 
 
 function App() {
+  
+  let [travel] = useState(data);
+
   return (
     <div className="App">
 
@@ -30,8 +35,8 @@ function App() {
       <Row>
         <Col xs>
           <img src="/ocean.jpg" width="80%"/>
-          <h1>바닷가</h1>
-          <p>맑고 투명한 바다</p>
+          <h1>{travel[0].content}</h1>
+          <p>{travel[0].price}</p>
         </Col>
         <Col xs={{ order: 12 }}>Second, but last</Col>
         <Col xs={{ order: 1 }}>Third, but second</Col>
